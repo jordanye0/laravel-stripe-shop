@@ -70,9 +70,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        return view('products.show', [
-            'product' => Product::findOrFail($id),
-        ]);
+        // return view('products.show', [
+        //     'product' => Product::findOrFail($id),
+        // ]);
     }
 
     /**
