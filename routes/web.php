@@ -19,6 +19,7 @@ Route::get('/cart/decrement/{item}/{qty}', 'ShoppingController@decrement')->name
 Route::get('/cart/delete/{item}', 'ShoppingController@deleteFromCart')->name('cart.delete');
 Route::get('/cart', 'ShoppingController@cart')->name('cart');
 Route::get('/cart/checkout', 'CheckoutController@index')->name('checkout');
+Route::post('/cart/checkout', 'CheckoutController@pay')->name('checkout');
 Route::resource('/products', 'ProductsController');
 
 Auth::routes();

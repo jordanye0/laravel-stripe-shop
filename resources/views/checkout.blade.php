@@ -90,13 +90,14 @@
                                 </a>
                                 
                                 <span style="float: right;">
-                                    <form action="/your-server-side-code" method="POST">
+                                    <form action="{{ route('checkout') }}" method="POST">
+                                        @csrf
                                           <script
                                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                                            data-key="pk_test_MRqmRjFqj28h9lBRkUXLrO5900vwozYuG9"
                                             data-amount="999"
-                                            data-name="Stripe.com"
-                                            data-description="Widget"
+                                            data-name="LaraShop"
+                                            data-description="Buy books, and we ship to you."
                                             data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                             data-locale="auto"
                                             data-zip-code="true">
