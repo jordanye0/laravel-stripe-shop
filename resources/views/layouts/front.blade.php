@@ -8,7 +8,7 @@
         <div class="row pt120">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="heading align-center mb60">
-                    <h4 class="h1 heading-title">LaraShop</h4>
+                    <h4 class="h1 heading-title"><a href="{{  route('home') }}">LaraShop</a></h4>
                     <p class="heading-text">Buy books, and we ship to you.
                     </p>
                 </div>
