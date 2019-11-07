@@ -13,6 +13,11 @@ class ShoppingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function cart()
+    {
+        return view('cart');
+    }
+
     public function addToCart(Request $request)
     {
 
@@ -30,8 +35,10 @@ class ShoppingController extends Controller
         return redirect()->route('cart');
     }
 
-    public function cart()
+    public function deleteFromCart(Request $request, $id)
     {
-        return view('cart');
+        Cart::remove($id);
+
+        return redirect()->back();
     }
 }
