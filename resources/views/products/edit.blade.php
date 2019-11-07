@@ -1,4 +1,4 @@
-@extends('layouts.shop')
+@extends('layouts.back')
 
 @section('content')
 <div class="container">
@@ -8,9 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <form action="{{ route('products.update', ['id' => $product->id ]) }}" method="post">
-                        {{ csrf_field() }}
-                        {{ method_field('PUT') }}
+                    <form action="{{ route('products.update', ['product' => $product->id ]) }}" method="post">
+                        @csrf
+                        @method('PUT')
                         <div class="form-group">
                               <label for="name">Name</label>
                               <input type="text" name="name" value="{{ $product->name }}" class="form-control">

@@ -1,4 +1,4 @@
-@extends('layouts.shop')
+@extends('layouts.back')
 
 @section('content')
 <div class="container">
@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
+                        @csrf
                         <div class="form-group">
                               <label for="name">Name</label>
                               <input type="text" name="name" class="form-control" value="{{ old('name') }}">

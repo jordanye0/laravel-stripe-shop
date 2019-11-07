@@ -1,4 +1,4 @@
-@extends('layouts.shop')
+@extends('layouts.back')
 
 @section('content')
 <div class="container">
@@ -29,13 +29,13 @@
                                           <td>{{ $product->name }}</td>
                                           <td>{{ $product->price }}</td>
                                           <td>
-                                                <a href="{{ route('products.edit', ['id' => $product->id ]) }}" class="btn btn-default btn-xs">Edit</a>
+                                                <a class="btn btn-default btn-xs" href="{{ route('products.edit', ['product' => $product->id]) }}">Edit</a>
                                           </td>
                                           <td>
-                                                <form action="{{ route('products.destroy', ['id' => $product->id ]) }}" method="post">
-                                                      {{ csrf_field() }}
-                                                      {{ method_field('DELETE') }}
-                                                      <button class="btn btn-xs btn-danger">Delete</button>
+                                                <form action="{{ route('products.destroy', ['product' => $product->id ]) }}" method="post">
+                                                      @csrf
+                                                      @method('DELETE')
+                                                      <input class="btn btn-danger btn-xs" type="submit" value="Delete">
                                                 </form>
                                           </td>
                                     </tr>
