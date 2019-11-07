@@ -18,13 +18,20 @@ class ShoppingController extends Controller
 
         $product = Product::findOrFail($request->p_id);
 
-        $cart = Cart::add([
+        $cartItem = Cart::add([
             'id' => $product->id,
             'name' => $product->name,
             'qty' => $request->qty,
             'price' => $product->price,
         ]);
 
-        dd(Cart::content());
+        Cart::associate($cartItem->rowId, 'App\Product');
+
+        return redirect()->route('cart');
+    }
+
+    public function cart()
+    {
+        return view('cart');
     }
 }
