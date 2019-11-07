@@ -13,6 +13,7 @@
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/product/{product}', 'FrontController@show')->name('show');
 Route::post('/cart/add', 'ShoppingController@addToCart')->name('cart.add');
+Route::get('/cart/add/{item}', 'ShoppingController@rapidAddToCart')->name('cart.rapid');
 Route::get('/cart/increment/{item}/{qty}', 'ShoppingController@increment')->name('cart.increment');
 Route::get('/cart/decrement/{item}/{qty}', 'ShoppingController@decrement')->name('cart.decrement');
 Route::get('/cart/delete/{item}', 'ShoppingController@deleteFromCart')->name('cart.delete');
